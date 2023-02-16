@@ -4,6 +4,10 @@ public class Human {
     String name;
     int age;
 
+    long salary;
+
+    boolean isMan = true;
+
 
     void drink()
     {
@@ -11,6 +15,6 @@ public class Human {
 
     }
     String info() {
-        return "name" + name + "age" + age;
+        return "name = " + name + ", age = " + age + ", salary = " + salary + ", isMan = " + isMan;
     }
 }
