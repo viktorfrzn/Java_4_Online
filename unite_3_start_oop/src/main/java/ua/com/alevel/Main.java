@@ -32,12 +32,11 @@ public class Main {
 //        Human h1 = new Human();
 //        h1.setName("Roma");
 //        char[] oldName1 = new char[4];
-//        oldName1[0] = 'R';
-//        oldName1[1] = 'o';
-//        oldName1[2] = 'm';
-//        oldName1[3] = 'a';
-//        oldName1[4] = 'a';
-//        char[] oldName2 = new char[]{ 'R', 'o', 'm', 'a' };
+//        oldName1[0] = 'G';
+//        oldName1[1] = 'A';
+//        oldName1[2] = 'B';
+//        oldName1[3] = 'E';
+//        char[] oldName2 = new char[]{ 'G', 'A', 'B', 'E' };
 
 //        System.out.print("oldName = ");
 //        for (int i = 0; i < oldName2.length; i++) {
@@ -52,7 +51,7 @@ public class Main {
 
 //        Human h2 = new Human();
 //        Human h2 = h1;
-//        h2.setName("Ivan");
+//        h2.setName("Viktor");
 //        System.out.println("h1 = " + h1.getName());
 //        System.out.println("h2 = " + h2.getName());
     }
