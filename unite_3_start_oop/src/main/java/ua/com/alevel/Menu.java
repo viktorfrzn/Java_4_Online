@@ -37,7 +37,7 @@ public class Menu {
     }
 
     private void stop() {
-        System.out.println("Thank you for your time!!!");
+        System.out.println("Thank you!!!");
         System.exit(0);
     }
 }
