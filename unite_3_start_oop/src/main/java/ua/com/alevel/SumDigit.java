@@ -17,7 +17,7 @@ public class SumDigit {
                 summ = summ + symbol;
             }
         }
-        System.out.println("The sum of all the numbers in your row ");
+        System.out.println("The sum of the numbers in your line ");
         System.out.println("======= " + summ + " =======");
     }
 

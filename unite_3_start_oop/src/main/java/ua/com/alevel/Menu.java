@@ -18,13 +18,13 @@ public class Menu {
     }
     private void operationList() {
         System.out.println();
-        System.out.println("###If you want to know the SUM OF DIGIT in your string ------------ Enter 1");
+        System.out.println("###Click if you want to know the sum of the digits in your line ------------ Enter 1");
         System.out.println();
-        System.out.println("###If you want to sort out duplicate characters in a string ------- Enter 2");
+        System.out.println("###Click to sort repeated characters in a string ------- Enter 2");
         System.out.println();
-        System.out.println("###If you want to know what time the lesson ends ------------------ Enter 3");
+        System.out.println("###Click to find out what time the lesson ends ------------------ Enter 3");
         System.out.println();
-        System.out.println("###If you want to EXIT ---------------------------------------------Enter 0");
+        System.out.println("###Click if you want to EXIT ---------------------------------------------Enter 4");
     }
     public void operationMenu(BufferedReader reader, String select) throws IOException {
         switch (select) {
@@ -37,7 +37,7 @@ public class Menu {
     }
 
     private void stop() {
-        System.out.println("Thank you for your time!!!");
+        System.out.println("Good bye!!!");
         System.exit(0);
     }
 }
