@@ -27,7 +27,11 @@ public class Student {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name.matches(".*\\d.*")) {
+            System.out.println("you stupid");
+        } else {
+            this.name = name;
+        }
     }
 
     public void setEmail(String email) {
@@ -40,5 +44,16 @@ public class Student {
 
     public void setTelegramAcc(String telegramAcc) {
         this.telegramAcc = telegramAcc;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", githubAcc='" + githubAcc + '\'' +
+                ", telegramAcc='" + telegramAcc + '\'' +
+                ", something=" + something +
+                '}';
     }
 }
