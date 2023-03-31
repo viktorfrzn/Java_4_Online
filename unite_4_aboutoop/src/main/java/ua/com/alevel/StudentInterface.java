@@ -36,6 +36,9 @@ public class StudentInterface {
             case "5" : stop(); break;
         }
         menu();
+        while ((select = reader.readLine()) !=null) {
+            crud(reader,select);
+        }
     }
 
     private void create(BufferedReader reader) throws IOException {
