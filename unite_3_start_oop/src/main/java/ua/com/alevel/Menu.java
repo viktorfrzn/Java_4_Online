@@ -24,7 +24,7 @@ public class Menu {
         System.out.println();
         System.out.println("###Click to find out what time the lesson ends ------------------ Enter 3");
         System.out.println();
-        System.out.println("###Click if you want to EXIT ---------------------------------------------Enter 4");
+        System.out.println("###Click if you want to EXIT ---------------------------------------Enter 4");
     }
     public void operationMenu(BufferedReader reader, String select) throws IOException {
         switch (select) {
