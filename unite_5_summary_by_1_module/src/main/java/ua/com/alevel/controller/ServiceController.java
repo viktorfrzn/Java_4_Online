@@ -31,118 +31,9 @@ public class ServiceController {
             case "3" -> findCar(reader);
             case "4" -> findAllCars();
             case "5" -> removeCar(reader);
-            case "6" -> createGarage(reader);
-            case "7" -> upgradeGarage(reader);
-            case "8" -> findGarage(reader);
-            case "9" -> findAllGarage();
-            case "10" -> removeGarage(reader);
-            case "11" -> attachCarToGarage(reader);
-            case "12" -> readCarsInGarage(reader);
-            case "13" -> removeCarInGarage(reader);
-            case "14" -> cleanAllCarInGarage(reader);
-            case "15" -> exit();
+            case "6" -> exit();
         }
         menu();
-    }
-
-    private void cleanAllCarInGarage(BufferedReader reader) throws IOException {
-        System.out.println("Please enter the garage id");
-        service.cleanGarage(reader.readLine().trim());
-    }
-
-    private void removeCarInGarage(BufferedReader reader) throws IOException {
-        System.out.println("Please enter the garage id");
-        String garageId = reader.readLine().trim();
-        System.out.println("PLease enter the car id");
-        String carId = reader.readLine().trim();
-        service.deleteCarFromGarage(garageId, carId);
-    }
-
-    private void readCarsInGarage(BufferedReader reader) throws IOException {
-        System.out.println("Please enter the garage id");
-        String id = reader.readLine().trim();
-        System.out.println(Car.CAR_UTIL);
-        for (Car car : service.readCarsInGarage(id)) {
-            System.out.println(car);
-        }
-    }
-
-    private void attachCarToGarage(BufferedReader reader) throws IOException {
-        System.out.println("Please enter the car id");
-        String carId = reader.readLine().trim();
-        System.out.println("Please enter the garage id");
-        String garageId = reader.readLine().trim();
-        service.attachCarToGarage(garageId, carId);
-    }
-
-    private void removeGarage(BufferedReader reader) throws IOException {
-        System.out.println("PLease enter the garage id");
-        service.removeGarage(reader.readLine().trim());
-    }
-
-    private  void findAllGarage() {
-        System.out.println(Garage.GARAGE_UTIL);
-        for (Garage garage : service.findAllGarages()) {
-            System.out.println(garage);
-        }
-    }
-
-    private void findGarage(BufferedReader reader) throws IOException {
-        System.out.println("Please enter the garage id");
-        Optional<Garage> garage = service.findGarageById(reader.readLine());
-        if (garage.isPresent()) {
-            System.out.println(Garage.GARAGE_UTIL);
-            System.out.println(garage.get());
-        } else {
-            System.out.println("This garage id is not correct");
-        }
-    }
-
-    private void upgradeGarage(BufferedReader reader) throws IOException {
-        System.out.println("PLease enter the garage id");
-        String id = reader.readLine();
-        if (id == null) return;
-        Optional<Garage> optional = service.findGarageById(id);
-        if (optional.isEmpty()) {
-            System.out.println("This id is incorrect");
-        } else {
-            upgradeGarageMenu();
-            String option = reader.readLine().trim();
-            System.out.println("PLease enter the new value");
-            switch (option) {
-                case "1" -> optional.get().setName(reader.readLine().trim());
-                case "2" -> optional.get().setAddress(reader.readLine().trim());
-                case "3" -> {
-                    int number;
-                    try {
-                        number = Integer.parseInt(reader.readLine().trim());
-                    } catch (Exception e) {
-                        number = Rules.DEFAULT_GARAGE_CAPACITY;
-                    }
-                    optional.get().setCapacity(number);
-                }
-            }
-            service.upgradeGarage(optional.get());
-        }
-    }
-
-    private void upgradeGarageMenu() {
-        System.out.println("To upgrade the name, please enter 1");
-        System.out.println("To upgrade the address, please enter 2");
-        System.out.println("To upgrade the capacity, please enter 3");
-    }
-
-    private void createGarage(BufferedReader reader) throws IOException {
-        Garage garage = new Garage();
-        System.out.println("Please enter the name");
-        garage.setName(reader.readLine().trim());
-        System.out.println("PLease enter the address");
-        garage.setAddress(reader.readLine().trim());
-        System.out.println("Please enter the capacity");
-        try {
-            garage.setCapacity(Integer.parseInt(reader.readLine().trim()));
-        } catch (Exception e) {garage.setCapacity(-1);}
-        service.createGarage(garage);
     }
 
     private void removeCar(BufferedReader reader) throws IOException {
@@ -215,25 +106,14 @@ public class ServiceController {
 
     private void menu() {
         System.out.println();
-        System.out.println("--------------------MENU--------------------");
-        System.out.println("To create a car, please enter ------------- 1");
-        System.out.println("To upgrade the car, please enter ---------- 2");
-        System.out.println("To find the car, please enter ------------- 3");
-        System.out.println("To find all cars, please enter ------------ 4");
-        System.out.println("To remove the car, please enter ----------- 5");
-        System.out.println("----------||---------||---------||----------");
-        System.out.println("To create a garage, please enter ---------- 6");
-        System.out.println("To upgrade the garage, please enter ------- 7");
-        System.out.println("To find the garage, please enter ---------- 8");
-        System.out.println("To find all garage, please enter ---------- 9");
-        System.out.println("To remove the garage, please enter ------- 10");
-        System.out.println("----------||---------||---------||----------");
-        System.out.println("To attach a car to garage/ please enter -- 11");
-        System.out.println("To read cars in garage, please enter ----- 12");
-        System.out.println("To remove the car in garage, enter ------- 13");
-        System.out.println("To remove all car in garage, enter ------- 14");
-        System.out.println("To close the application, please enter --- 15");
-        System.out.println("---------------------------------------------");
+        System.out.println("-------------MENU---------------");
+        System.out.println("Create a car,please enter ---  1");
+        System.out.println("Upgrade the car,please enter - 2");
+        System.out.println("Find the car,please enter ---  3");
+        System.out.println("Find all cars,please enter --- 4");
+        System.out.println("Remove the car,please enter -- 5");
+        System.out.println("Close application,please enter 6");
+        System.out.println("---------------------------------");
         System.out.println();
     }
 }
